@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto,sans-serif;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 0;
+    width: 100%;
+    height: 150px;
+}
+.form-search {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: 1px solid #424242;
+    border-radius: 25px;
+}
+.input-search {
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+.icon-search {
+    width: 20px;
+    height: 20px;
+}
+.btn-search {
+    background-color: #51c4e7;
+}
+
+.btn {
+    font-family: inherit;
+    color: #141313;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all .5s linear;
+}
+
+.container-filter {
+    display: flex;
+    margin-bottom: 20px;
+}
+.icon-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+}
+.icon-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.card-list-character {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.card-character {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    color: #424242;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: .4s ease-in-out;
+}
+.character-img {
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    padding: 1rem;
+}
+.character-img img {
+    width: 100%;
+    height: 100%;
+    transition: .5s linear;
+}
+.character-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding-bottom: 1rem;
+}
+.character-id {
+    font-size: .9rem;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.character-name {
+    font-size: 1.5rem;
+}
+.character-types {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .9rem;
+    text-transform: capitalize;
+}
+.type {
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+.container-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    padding: 1rem 0;
+}

@@ -15,7 +15,7 @@ const fetchApi= async(page)=>{
         const {results} = await response.json()
         results.forEach(({id, image, name, species, gender, location, origin }) => {
         cardContainer.innerHTML += `
-        <a href="" class="card-character">
+        <div href="" class="card-character">
             <div class="character-img">
                 <img src="${image}" alt="bulbasaur">
             </div>
@@ -31,7 +31,7 @@ const fetchApi= async(page)=>{
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
         `
         });
     } catch (error) {
@@ -46,7 +46,7 @@ const searchInApi = async ()=>{
             const response = await fetch(`${baseUrl}?page=${page}`)
             if(!response.ok)throw new Error("Error en la red");
             const {results} = await response.json();
-            allCharacters = await results.filter(character=>character.name.includes(characterSearch));
+            allCharacters = await results.filter(character=>character.name.toLowerCase().includes(characterSearch.toLowerCase()));
             return allCharacters;
         }
     } catch (error) {
@@ -82,7 +82,7 @@ const findCharacterApi = async(id)=>{
         if(!response.ok)throw new Error("Error en la red")
         const data = await response.json()
         cardContainer.innerHTML += `
-        <a href="" class="card-character">
+        <div href="" class="card-character">
             <div class="character-img">
                 <img src="${data.image}" alt="bulbasaur">
             </div>
@@ -98,7 +98,7 @@ const findCharacterApi = async(id)=>{
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
         `
     } catch (error) {
         console.log("ERROR ",error)
@@ -131,7 +131,7 @@ formSearch.addEventListener("submit", async(e)=>{
     const foundCharacters = await searchInApi()
     foundCharacters.forEach(({id, image, name, species, gender }) => {
         cardContainer.innerHTML += `
-        <a href="" class="card-character">
+        <div href="" class="card-character">
             <div class="character-img">
                 <img src="${image}" alt="bulbasaur">
             </div>
@@ -143,7 +143,7 @@ formSearch.addEventListener("submit", async(e)=>{
                     <span class="type poison">${gender}</span>
                 </div>
             </div>
-        </a>
+        </div>
         `
         pagination.style.display = "none"
         });
